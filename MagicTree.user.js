@@ -1,4 +1,4 @@
-// ==UserScript==
+п»ї// ==UserScript==
 // @name        MagicTree
 // @namespace   thescs.naumen.sd.displayhiddenblocks
 // @description Shows hidden areas in Service Desk
@@ -8,56 +8,56 @@
 // ==/UserScript==
 
 function maindo() {
-  //=====отображаем скрытые поля и преобразует ид в ссылку в разделе Документов=======
+  //=====РѕС‚РѕР±СЂР°Р¶Р°РµРј СЃРєСЂС‹С‚С‹Рµ РїРѕР»СЏ Рё РїСЂРµРѕР±СЂР°Р·СѓРµС‚ РёРґ РІ СЃСЃС‹Р»РєСѓ РІ СЂР°Р·РґРµР»Рµ Р”РѕРєСѓРјРµРЅС‚РѕРІ=======
   var hiddenBlock = document.getElementsByClassName('CubicTableCell CubicNormalCell col0');
   var bodyBlock;
   for (i = 0; i < hiddenBlock.length; i++) {
-      //////////******* Понималка для новых ИД документов ***********////////////////
+      //////////******* РџРѕРЅРёРјР°Р»РєР° РґР»СЏ РЅРѕРІС‹С… РР” РґРѕРєСѓРјРµРЅС‚РѕРІ ***********////////////////
       if((hiddenBlock[i].innerHTML.indexOf('dbfile') + 1) && (hiddenBlock[i].innerHTML.indexOf('href') + 1) <=0 ) {
         hiddenBlock[i].style = '';
         bodyBlock = hiddenBlock[i].innerHTML;
         hiddenBlock[i].innerHTML = '<a href="/fx/cubicdownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>'; break;
     }
-      //////////******* Конец понималки для новых ИД документов *****////////////////
-	 /* Устаревшие идентификаторы */
-    if(hiddenBlock[i].innerHTML.length<=10){    //проверяем, ТОЧНО ли это таблица с документами??
+      //////////******* РљРѕРЅРµС† РїРѕРЅРёРјР°Р»РєРё РґР»СЏ РЅРѕРІС‹С… РР” РґРѕРєСѓРјРµРЅС‚РѕРІ *****////////////////
+	 /* РЈСЃС‚Р°СЂРµРІС€РёРµ РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂС‹ */
+    if(hiddenBlock[i].innerHTML.length<=10){    //РїСЂРѕРІРµСЂСЏРµРј, РўРћР§РќРћ Р»Рё СЌС‚Рѕ С‚Р°Р±Р»РёС†Р° СЃ РґРѕРєСѓРјРµРЅС‚Р°РјРё??
       hiddenBlock[i].style = '';
-    if((hiddenBlock[i].innerHTML.indexOf('href') + 1) <=0 ) {    //уходим от цикла с удвоением и вообще дикой хернёй
+    if((hiddenBlock[i].innerHTML.indexOf('href') + 1) <=0 ) {    //СѓС…РѕРґРёРј РѕС‚ С†РёРєР»Р° СЃ СѓРґРІРѕРµРЅРёРµРј Рё РІРѕРѕР±С‰Рµ РґРёРєРѕР№ С…РµСЂРЅС‘Р№
       bodyBlock = hiddenBlock[i].innerHTML;
       hiddenBlock[i].innerHTML = '<a href="/fx/cubicdownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>';
     }
     }
-	 /* Конец блока распознавалки устаревших идентификаторов */
+	 /* РљРѕРЅРµС† Р±Р»РѕРєР° СЂР°СЃРїРѕР·РЅР°РІР°Р»РєРё СѓСЃС‚Р°СЂРµРІС€РёС… РёРґРµРЅС‚РёС„РёРєР°С‚РѕСЂРѕРІ */
   }
-  //=====КОНЕЦ======
-  //=====Открываем обращения====
+  //=====РљРћРќР•Р¦======
+  //=====РћС‚РєСЂС‹РІР°РµРј РѕР±СЂР°С‰РµРЅРёСЏ====
   var hiddenBlock2 = document.getElementsByTagName('table');
-  for (i = 0; i < hiddenBlock2.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if((hiddenBlock2[i].innerHTML.indexOf('по улице')+1) >= 2) hiddenBlock2[i].style = '';
+  for (i = 0; i < hiddenBlock2.length; i++){   //РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅС‹Р№ Р›Р Р±Р»РѕРє Р±С‹ РѕС‚РєСЂС‹РІР°РµРј Рё СЃР±СЂР°СЃС‹РІР°РµРј РµРјСѓ СЃС‚РёР»СЊ??
+    if((hiddenBlock2[i].innerHTML.indexOf('РїРѕ СѓР»РёС†Рµ')+1) >= 2) hiddenBlock2[i].style = '';
   }
-  //=====КОНЕЦ=====
-   //=====Открываем спойлер Мониторинг Аварий====
+  //=====РљРћРќР•Р¦=====
+   //=====РћС‚РєСЂС‹РІР°РµРј СЃРїРѕР№Р»РµСЂ РњРѕРЅРёС‚РѕСЂРёРЅРі РђРІР°СЂРёР№====
   var hiddenBlock6 = document.getElementsByTagName('div');
-  for (i = 0; i < hiddenBlock6.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if((hiddenBlock6[i].innerHTML.indexOf('Мониторинг аварий')+1) >= 2) if(hiddenBlock6[i].style = 'display: none') hiddenBlock6[i].style = '';
+  for (i = 0; i < hiddenBlock6.length; i++){   //РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅС‹Р№ Р›Р Р±Р»РѕРє Р±С‹ РѕС‚РєСЂС‹РІР°РµРј Рё СЃР±СЂР°СЃС‹РІР°РµРј РµРјСѓ СЃС‚РёР»СЊ??
+    if((hiddenBlock6[i].innerHTML.indexOf('РњРѕРЅРёС‚РѕСЂРёРЅРі Р°РІР°СЂРёР№')+1) >= 2) if(hiddenBlock6[i].style = 'display: none') hiddenBlock6[i].style = '';
   }
-  //=====КОНЕЦ=====
-  //=====Открываем пароль к ЛК=====
+  //=====РљРћРќР•Р¦=====
+  //=====РћС‚РєСЂС‹РІР°РµРј РїР°СЂРѕР»СЊ Рє Р›Рљ=====
   var hiddenBlock3 = document.getElementsByClassName('CubicTableHolder');
-  for (i = 0; i < hiddenBlock3.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if((hiddenBlock3[i].innerHTML.indexOf('Пароль к сайту статистики</td>')+1) >= 2) hiddenBlock3[i].style = '';
+  for (i = 0; i < hiddenBlock3.length; i++){   //РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅС‹Р№ Р›Р Р±Р»РѕРє Р±С‹ РѕС‚РєСЂС‹РІР°РµРј Рё СЃР±СЂР°СЃС‹РІР°РµРј РµРјСѓ СЃС‚РёР»СЊ??
+    if((hiddenBlock3[i].innerHTML.indexOf('РџР°СЂРѕР»СЊ Рє РїРѕСЂС‚Р°Р»Сѓ Р°Р±РѕРЅРµРЅС‚Р°</td>')+1) >= 2) hiddenBlock3[i].style = '';
   }
-  //=====КОНЕЦ=====
-  //=====Открываем остальную чепуху - СМС абоненту, кнопки=====
+  //=====РљРћРќР•Р¦=====
+  //=====РћС‚РєСЂС‹РІР°РµРј РѕСЃС‚Р°Р»СЊРЅСѓСЋ С‡РµРїСѓС…Сѓ - РЎРњРЎ Р°Р±РѕРЅРµРЅС‚Сѓ, РєРЅРѕРїРєРё=====
   var hiddenBlock4 = document.getElementsByClassName('gwt-Anchor');
-  for (i = 0; i < hiddenBlock4.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if((hiddenBlock4[i].title.indexOf('Отправить SMS с логином и паролем')+1) >= 0) hiddenBlock4[i].style = '';
+  for (i = 0; i < hiddenBlock4.length; i++){   //РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅС‹Р№ Р›Р Р±Р»РѕРє Р±С‹ РѕС‚РєСЂС‹РІР°РµРј Рё СЃР±СЂР°СЃС‹РІР°РµРј РµРјСѓ СЃС‚РёР»СЊ??
+    if((hiddenBlock4[i].title.indexOf('РћС‚РїСЂР°РІРёС‚СЊ SMS СЃ Р»РѕРіРёРЅРѕРј Рё РїР°СЂРѕР»РµРј')+1) >= 0) hiddenBlock4[i].style = '';
   }
   var hiddenBlock5 = document.getElementsByClassName('gwt-Button');
-  for (i = 0; i < hiddenBlock5.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if(hiddenBlock5[i].innerHTML == "Создать квартиру") hiddenBlock5[i].style = 'width: 180px;';
-    if(hiddenBlock5[i].innerHTML == "Отобразить топологию") hiddenBlock5[i].style = 'width: 180px;';
+  for (i = 0; i < hiddenBlock5.length; i++){   //РїСЂРѕРІРµСЂСЏРµРј, РїСЂР°РІРёР»СЊРЅС‹Р№ Р›Р Р±Р»РѕРє Р±С‹ РѕС‚РєСЂС‹РІР°РµРј Рё СЃР±СЂР°СЃС‹РІР°РµРј РµРјСѓ СЃС‚РёР»СЊ??
+    if(hiddenBlock5[i].innerHTML == "РЎРѕР·РґР°С‚СЊ РєРІР°СЂС‚РёСЂСѓ") hiddenBlock5[i].style = 'width: 180px;';
+    if(hiddenBlock5[i].innerHTML == "РћС‚РѕР±СЂР°Р·РёС‚СЊ С‚РѕРїРѕР»РѕРіРёСЋ") hiddenBlock5[i].style = 'width: 180px;';
   }
-  //=====КОНЕЦ=====
+  //=====РљРћРќР•Р¦=====
 }
 setInterval(maindo, 4000);
