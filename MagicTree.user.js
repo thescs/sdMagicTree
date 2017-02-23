@@ -45,7 +45,7 @@ function maindo() {
   //=====Открываем пароль к ЛК=====
   var hiddenBlock3 = document.getElementsByClassName('CubicTableHolder');
   for (i = 0; i < hiddenBlock3.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
-    if((hiddenBlock3[i].innerHTML.indexOf('Пароль к сайту статистики</td>')+1) >= 2) hiddenBlock3[i].style = '';
+    if((hiddenBlock3[i].innerHTML.indexOf('Пароль к порталу абонента</td>')+1) >= 2) hiddenBlock3[i].style = '';
   }
   //=====КОНЕЦ=====
   //=====Открываем остальную чепуху - СМС абоненту, кнопки=====
