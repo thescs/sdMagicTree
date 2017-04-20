@@ -1,12 +1,3 @@
-﻿// ==UserScript==
-// @name        MagicTree
-// @namespace   thescs.naumen.sd.displayhiddenblocks
-// @description Shows hidden areas in Service Desk
-// @include     https://sd.volia.com:8443/fx/voliagwt/*
-// @version     1
-// @grant       none
-// ==/UserScript==
-
 function maindo() {
   //=====отображаем скрытые поля и преобразует ид в ссылку в разделе Документов=======
   var hiddenBlock = document.getElementsByClassName('CubicTableCell CubicNormalCell col0');
