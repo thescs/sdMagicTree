@@ -16,7 +16,7 @@ function maindo() {
       if((hiddenBlock[i].innerHTML.indexOf('dbfile') + 1) && (hiddenBlock[i].innerHTML.indexOf('href') + 1) <=0 ) {
         hiddenBlock[i].style = '';
         bodyBlock = hiddenBlock[i].innerHTML;
-        hiddenBlock[i].innerHTML = '<a href="/fx/cubicdownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>'; break;
+        hiddenBlock[i].innerHTML = '<a href="/fx/imagedownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>'; break;
     }
       //////////******* Конец понималки для новых ИД документов *****////////////////
 	 /* Устаревшие идентификаторы */
