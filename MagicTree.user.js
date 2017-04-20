@@ -24,7 +24,7 @@ function maindo() {
       hiddenBlock[i].style = '';
     if((hiddenBlock[i].innerHTML.indexOf('href') + 1) <=0 ) {    //уходим от цикла с удвоением и вообще дикой хернёй
       bodyBlock = hiddenBlock[i].innerHTML;
-      hiddenBlock[i].innerHTML = '<a href="/fx/cubicdownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>';
+      hiddenBlock[i].innerHTML = '<a href="/fx/imagedownload?fileid='+bodyBlock+'&fileName=" target="_blank">'+bodyBlock+'</a>';
     }
     }
 	 /* Конец блока распознавалки устаревших идентификаторов */
