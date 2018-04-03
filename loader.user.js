@@ -3,6 +3,7 @@
 // @namespace   thescs.naumen.sd.displayhiddenblocks.loader
 // @description Shows hidden areas in Service Desk (autoupdate)
 // @include     https://sd.volia.com:8443/fx/voliagwt/*
+// @require       http://ajax.googleapis.com/ajax/libs/jquery/1.2.6/jquery.js
 // @version     2
 // @grant       none
 // ==/UserScript==
