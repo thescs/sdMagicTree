@@ -40,10 +40,11 @@ function maindo() {
   }
   //=====КОНЕЦ====
 //=====Открываем кнопку Паспорт  дома=====
-  var hiddenBlock99 = document.getElementsByTagName('table');
+	$('table:contains("Паспорт дома")').css("display", "block");
+ /* var hiddenBlock99 = document.getElementsByTagName('table');
   for (i = 0; i < hiddenBlock99.length; i++){   //проверяем, правильный ЛИ блок бы открываем и сбрасываем ему стиль??
     if((hiddenBlock99[i].innerHTML.indexOf('Паспорт дома</td>')+1) >= 2) hiddenBlock99[i].style = 'width: 100%';
-  }
+  }*/
   //=====КОНЕЦ=====
   //=====Открываем остальную чепуху - СМС абоненту, кнопки=====
   var hiddenBlock4 = document.getElementsByClassName('gwt-Anchor');
